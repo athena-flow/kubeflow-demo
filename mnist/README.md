@@ -2,6 +2,7 @@
 sudo docker build -t yiluxiangbei/mnist:v0.0.1 .
 sudo docker push yiluxiangbei/mnist:v0.0.1
 
+sudo yum install jq
 latest_version=$(curl --silent https://api.github.com/repos/kubeflow/pipelines/releases/latest | jq -r .tag_name)
 pip3 install https://storage.googleapis.com/ml-pipeline/release/${latest_version}/kfp.tar.gz --upgrade
 
