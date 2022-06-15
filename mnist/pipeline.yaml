@@ -1,0 +1,25 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Workflow
+metadata:
+  generateName: mnist-train-
+  annotations: {pipelines.kubeflow.org/kfp_sdk_version: 1.8.10, pipelines.kubeflow.org/pipeline_compilation_time: '2022-06-15T18:11:42.603808',
+    pipelines.kubeflow.org/pipeline_spec: '{"description": "test", "name": "mnist
+      train"}'}
+  labels: {pipelines.kubeflow.org/kfp_sdk_version: 1.8.10}
+spec:
+  entrypoint: mnist-train
+  templates:
+  - name: mnist
+    container: {image: 'yiluxiangbei/mnist:v0.0.1'}
+    metadata:
+      labels:
+        pipelines.kubeflow.org/kfp_sdk_version: 1.8.10
+        pipelines.kubeflow.org/pipeline-sdk-type: kfp
+        pipelines.kubeflow.org/enable_caching: "true"
+  - name: mnist-train
+    dag:
+      tasks:
+      - {name: mnist, template: mnist}
+  arguments:
+    parameters: []
+  serviceAccountName: pipeline-runner
