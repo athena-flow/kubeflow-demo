@@ -1,3 +1,5 @@
+{"error_message":"Error creating pipeline: Create pipeline failed: InternalServerError: Failed to store pipelines/f1fd01f8-2c99-4e9c-af2c-3ff548d348df: The specified bucket does not exist","error_details":"Error creating pipeline: Create pipeline failed: InternalServerError: Failed to store pipelines/f1fd01f8-2c99-4e9c-af2c-3ff548d348df: The specified bucket does not exist"}
+
 #
 # A fatal error has been detected by the Java Runtime Environment:
 #
