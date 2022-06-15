@@ -26,3 +26,7 @@ pip install https://storage.googleapis.com/ml-pipeline/release/${latest_version}
 which dsl-compile
 /<PATH_TO_YOUR_USER_BIN>/miniconda3/envs/mlpipeline/bin/dsl-compile
 ```
+
+```
+dsl-compile
+```
